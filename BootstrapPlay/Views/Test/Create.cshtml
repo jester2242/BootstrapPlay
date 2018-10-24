@@ -1,0 +1,13 @@
+﻿@model BootstrapPlay.Models.itemfoo
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<div>
+    @Html.LabelFor(l=>l.Id): @Model.Id
+</div>
+<div>
+@Html.LabelFor(l => l.Foo ) : @Html.EditorFor(m => m.Foo)
+    </div>

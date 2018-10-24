@@ -1,0 +1,48 @@
+﻿@model BootstrapPlay.Models.MulitModel
+@using GridMvc.Html
+
+@{
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+</head>
+<body>
+    <div>
+        <p>display</p>
+        </div>
+    <div> 
+
+        <text>@(Model.GroupName)</text>
+        @{ 
+            var grid = new WebGrid(Model.FooThings);
+        }
+        @grid.GetHtml(tableStyle: "table table-hover", 
+            mode: WebGridPagerModes.NextPrevious,
+            columns: grid.Columns(
+                grid.Column(columnName: "Id", header:"Id", format:@<text>@item.Id</text>, style: "colWidth"),
+                grid.Column(columnName: "Foo", header: "Foo", format:@<text>@item.Foo</text>, style: "colWidth"),
+                grid.Column(columnName: "Foo", header: "Foo", format: @<text>
+        <form action="@Url.Action("Create","Test")" method="post" > 
+            <input id="Id" name="Id" type="hidden" value="@item.Id" />
+            <input id="Foo" name="Foo" type="hidden" value="@item.Foo" />
+            <button type="submit" Id=@item.Id > Create </button> 
+        </form>
+        </text>, style: "colWidth")
+
+            )
+        )
+
+
+
+
+    </div>
+</body>
+</html>
